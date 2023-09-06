@@ -245,17 +245,16 @@ pomodoro(pomodoroMinutes, 0 )// START
 
 
 let pauseTimer = () => {
+    clearInterval(intervalCounter);
     if(paused == false){
         if(currentCycle === "pomodoro"){
             clearInterval(intervalCounter);
-            console.log(currentTimer);
-            console.log(minutes, seconds) 
         }else if(currentCycle === "shortBreak"){
             clearInterval(intervalCounter);
         }else if(currentCycle === "longBreak"){
             clearInterval(intervalCounter);
         }
-
+        alert("Timer Paused");
     }else if(paused == true){
         if(currentCycle === "pomodoro"){
             pomodoro(minutes, seconds)
@@ -267,6 +266,7 @@ let pauseTimer = () => {
             longBreak(minutes, seconds)
  
         }
+        alert("Timer Started");
     }
 
     paused = !paused
@@ -279,6 +279,7 @@ pomodoroTab.addEventListener("click", () => {
     if(currentCycle == 'pomodoro'){
         clearInterval(intervalCounter);
         pomodoro(pomodoroMinutes, 0);
+        alert("Pomodoro Started");
     }
 })
 
@@ -286,6 +287,7 @@ shortBreakTab.addEventListener("click", () => {
     if(currentCycle == "shortBreak"){
         clearInterval(intervalCounter);
         shortBreak(shortBreakMinutes, 0);
+        alert("Short Break Started");
     }
 })
 
@@ -293,8 +295,8 @@ longBreakTab.addEventListener("click", () => {
     if(currentCycle == "longBreak"){
         clearInterval(intervalCounter);
         longBreak(longBreakMinutes, 0);
+        alert("Long Break Started");
     }
-    
 })
 
 // Using setting icon to open the settings page
