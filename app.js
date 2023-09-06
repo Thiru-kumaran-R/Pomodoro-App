@@ -230,7 +230,7 @@ let longBreak = (minute, second) => {
             clearInterval(intervalCounter);
             playAudio();
             setTimeout(() => {
-                pomodoro(pomodoroMinutes, 0)
+                pomodoro(pomodoroMinutes, 0);
             }, 1000);
             
         }
@@ -240,12 +240,11 @@ let longBreak = (minute, second) => {
 
 }
 
-pomodoro(pomodoroMinutes, 0 )// START
+pomodoro(pomodoroMinutes, 0 );// START
 
 
 
 let pauseTimer = () => {
-    clearInterval(intervalCounter);
     if(paused == false){
         alert("Timer Paused");
         if(currentCycle === "pomodoro"){
@@ -255,17 +254,17 @@ let pauseTimer = () => {
         }else if(currentCycle === "longBreak"){
             clearInterval(intervalCounter);
         }
-    }else if(paused == true){
+    }
+    if(paused == true){
         alert("Timer Started");
         if(currentCycle === "pomodoro"){
-            pomodoro(minutes, seconds)
+            pomodoro(minutes, seconds);
  
         }else if(currentCycle === "shortBreak"){
-            shortBreak(minutes, seconds)
+            shortBreak(minutes, seconds);
  
         }else if(currentCycle === "longBreak"){
-            longBreak(minutes, seconds)
- 
+            longBreak(minutes, seconds);
         }
     }
     paused = !paused
@@ -309,7 +308,7 @@ let changeTimerPomodoro = () => {
     if(pomodoroTimer.name == "pomodoro-time"){
         pomodoroMinutes = pomodoroTimer.value;
         clearInterval(intervalCounter);
-        pomodoro(pomodoroTimer.value, 0)
+        pomodoro(pomodoroTimer.value, 0);
     }
 }
 
@@ -317,7 +316,7 @@ let changeTimerShort = () => {
     if(shortTimer.name = "short-break"){
         shortBreakMinutes = shortTimer.value;
         clearInterval(intervalCounter);
-        shortBreak(shortBreakMinutes, 0)
+        shortBreak(shortBreakMinutes, 0);
     }
 }
 
@@ -325,7 +324,7 @@ let changeTimerLong = () => {
     if(longTimer.name = "long-break"){
         longBreakMinutes = longTimer.value;
         clearInterval(intervalCounter);
-        longBreak(longBreakMinutes, 0)
+        longBreak(longBreakMinutes, 0);
     }
 }
 
