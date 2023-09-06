@@ -247,6 +247,7 @@ pomodoro(pomodoroMinutes, 0 )// START
 let pauseTimer = () => {
     clearInterval(intervalCounter);
     if(paused == false){
+        alert("Timer Paused");
         if(currentCycle === "pomodoro"){
             clearInterval(intervalCounter);
         }else if(currentCycle === "shortBreak"){
@@ -254,8 +255,8 @@ let pauseTimer = () => {
         }else if(currentCycle === "longBreak"){
             clearInterval(intervalCounter);
         }
-        alert("Timer Paused");
     }else if(paused == true){
+        alert("Timer Started");
         if(currentCycle === "pomodoro"){
             pomodoro(minutes, seconds)
  
@@ -266,11 +267,10 @@ let pauseTimer = () => {
             longBreak(minutes, seconds)
  
         }
-        alert("Timer Started");
     }
-
     paused = !paused
 }
+
 //Adding stop and start to the timer
 pause.addEventListener("click", pauseTimer);
 
