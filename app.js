@@ -33,14 +33,6 @@ const body = document.getElementsByTagName("body");
 //active className
 const active = document.querySelector(".active-tab");
 
-//Audio 
-function playAudio(){
-    var audio = new Audio("./audio/service-bell-ring-14610.mp3");
-    audio.volume = 1.0;
-    audio.muted = false;
-    audio.play(); 
-}
-
 //User input for timer
 let pomodoroMinutes = 25; 
 let shortBreakMinutes = 5 ; 
@@ -54,6 +46,8 @@ let paused = false;
 let currentCycle;
 let cycle = 0; 
 let userNoOfCycles = Cycles.value;
+
+//Audio
 
 
 // Timer for pomodoro 
@@ -246,30 +240,39 @@ pomodoro(pomodoroMinutes, 0 );// START
 
 let pauseTimer = () => {
     if(paused == false){
-         alert("Timer Paused");
-        if(currentCycle === "pomodoro"){
+        if(currentCycle == "pomodoro"){
             clearInterval(intervalCounter);
-        }else if(currentCycle === "shortBreak"){
+        }else if(currentCycle == "shortBreak"){
             clearInterval(intervalCounter);
-        }else if(currentCycle === "longBreak"){
+        }else if(currentCycle == "longBreak"){
             clearInterval(intervalCounter);
         }
-       
     }
+
     if(paused == true){
        
-        if(currentCycle === "pomodoro"){
+        if(currentCycle == "pomodoro"){
             pomodoro(minutes, seconds);
  
-        }else if(currentCycle === "shortBreak"){
+        }else if(currentCycle == "shortBreak"){
             shortBreak(minutes, seconds);
  
-        }else if(currentCycle === "longBreak"){
+        }else if(currentCycle == "longBreak"){
             longBreak(minutes, seconds);
         }
     }
+
     paused = !paused
 }
+
+let checkPauseButton = setInterval(() => {
+    if(paused){
+        pause.innerText = "start";
+    }else{
+        pause.innerText = "pause";
+    }  
+}, 400);
+
 
 //Adding stop and start to the timer
 pause.addEventListener("click", pauseTimer);
@@ -335,7 +338,7 @@ pomodoroTab.addEventListener("click", () => {
 
 shortBreakTab.addEventListener("click", () => {
     clearInterval(intervalCounter);
-    paused = false
+    paused = false;
     shortBreak(shortBreakMinutes, 0);
 })
 
