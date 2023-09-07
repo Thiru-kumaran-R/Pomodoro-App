@@ -246,7 +246,7 @@ pomodoro(pomodoroMinutes, 0 );// START
 
 let pauseTimer = () => {
     if(paused == false){
-        alert("Timer Paused");
+         alert("Timer Paused");
         if(currentCycle === "pomodoro"){
             clearInterval(intervalCounter);
         }else if(currentCycle === "shortBreak"){
@@ -254,9 +254,10 @@ let pauseTimer = () => {
         }else if(currentCycle === "longBreak"){
             clearInterval(intervalCounter);
         }
+       
     }
     if(paused == true){
-        alert("Timer Started");
+       
         if(currentCycle === "pomodoro"){
             pomodoro(minutes, seconds);
  
@@ -278,7 +279,6 @@ pomodoroTab.addEventListener("click", () => {
     if(currentCycle == 'pomodoro'){
         clearInterval(intervalCounter);
         pomodoro(pomodoroMinutes, 0);
-        alert("Pomodoro Started");
     }
 })
 
@@ -286,7 +286,6 @@ shortBreakTab.addEventListener("click", () => {
     if(currentCycle == "shortBreak"){
         clearInterval(intervalCounter);
         shortBreak(shortBreakMinutes, 0);
-        alert("Short Break Started");
     }
 })
 
@@ -294,7 +293,6 @@ longBreakTab.addEventListener("click", () => {
     if(currentCycle == "longBreak"){
         clearInterval(intervalCounter);
         longBreak(longBreakMinutes, 0);
-        alert("Long Break Started");
     }
 })
 
@@ -331,16 +329,19 @@ let changeTimerLong = () => {
 //Click on the tab to swtich the timings
 pomodoroTab.addEventListener("click", () => {
     clearInterval(intervalCounter);
+    paused = false;
     pomodoro(pomodoroMinutes, 0);
 })
 
 shortBreakTab.addEventListener("click", () => {
     clearInterval(intervalCounter);
+    paused = false
     shortBreak(shortBreakMinutes, 0);
 })
 
 longBreakTab.addEventListener("click", () => {
     clearInterval(intervalCounter);
+    paused = false;
     longBreak(longBreakMinutes, 0);
 })
 
