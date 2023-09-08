@@ -48,7 +48,11 @@ let cycle = 0;
 let userNoOfCycles = Cycles.value;
 
 //Audio
-
+function playAudio(){
+    var audio = new Audio(src="./audio/service-bell-ring-14610.mp3");
+    audio.muted = false;
+    audio.play();
+}
 
 // Timer for pomodoro 
 let pomodoro = (minute, second) => {
@@ -94,6 +98,7 @@ let pomodoro = (minute, second) => {
         //Check for ending
         if(checkSeconds === 0 && checkMinutes == 0){
             clearInterval(intervalCounter);
+            //audio
             playAudio();
             cycle++;
            
@@ -157,6 +162,7 @@ let shortBreak = (minute, second) => {
 
         if(checkSeconds === 0 && checkMinutes == 0){
             clearInterval(intervalCounter);
+            //audio
             playAudio();
             cycle++;
             
@@ -222,6 +228,7 @@ let longBreak = (minute, second) => {
 
         if(checkSeconds === 0 && checkMinutes == 0){
             clearInterval(intervalCounter);
+            //audio
             playAudio();
             setTimeout(() => {
                 pomodoro(pomodoroMinutes, 0);
@@ -309,6 +316,7 @@ let changeTimerPomodoro = () => {
     if(pomodoroTimer.name == "pomodoro-time"){
         pomodoroMinutes = pomodoroTimer.value;
         clearInterval(intervalCounter);
+        paused = false;
         pomodoro(pomodoroTimer.value, 0);
     }
 }
@@ -317,6 +325,7 @@ let changeTimerShort = () => {
     if(shortTimer.name = "short-break"){
         shortBreakMinutes = shortTimer.value;
         clearInterval(intervalCounter);
+        paused = false;
         shortBreak(shortBreakMinutes, 0);
     }
 }
@@ -325,6 +334,7 @@ let changeTimerLong = () => {
     if(longTimer.name = "long-break"){
         longBreakMinutes = longTimer.value;
         clearInterval(intervalCounter);
+        paused = false;
         longBreak(longBreakMinutes, 0);
     }
 }

@@ -1,7 +1,3 @@
-/* background-color : rgba(31,33,64,255) */
-/* tab-swtiching and line: #f87171 */
-/* tab background : #151932 */
-/* heading-text-colot : #e2e9ff */
 
 *{
     margin: 0px;
@@ -91,7 +87,7 @@ body{
 
 .inner-circle{
     position: absolute;
-    inset: 25px;
+    inset: 20px;
     background-color: #151934;
     border-radius: 50%;
     display: flex;
@@ -136,8 +132,8 @@ body{
 #timer-fill{
     position: absolute;
     cx: 200;
-    cy: 175;
-    r: 155 ;
+    cy: 180;
+    r: 158 ;
     stroke:  #f87171 ;
     stroke-width : 15;
     stroke-linecap: round;
