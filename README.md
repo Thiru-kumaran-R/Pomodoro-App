@@ -9,18 +9,12 @@ There are 3 modes (pomodoro, short break, long break) in this app, you can swtic
 
 You can restart any mode by clicking on the respective mode tab.
 
-Pomodoro : This modes ranges from 25 mins to 45 mins.  
-Short Break : This modes ranges from 5 mins to 15 mins.    
-Long Break : This modes ranges from 10 mins to 40 mins.     
-Work Interval : There are 2 to 6 intervals.
+**Pomodoro** : This modes ranges from 25 mins to 45 mins.  
+**Short Break** : This modes ranges from 5 mins to 15 mins.    
+**Long Break** : This modes ranges from 10 mins to 40 mins.     
+**Work Interval** : There are 2 to 6 intervals.
 
 In the options for the previously mentioned modes, you can select your mins in the settings option.
-
-
-## Preview
-
-<img width="500" alt="Screenshot 2023-09-06 at 10 35 11 AM" src="https://github.com/thirukumaran05/Pomodoro-App/assets/114419114/313c9af6-15b9-4871-8ef5-2f9060789b32">
-
 
 ## Demo
 
