@@ -33,6 +33,10 @@ const body = document.getElementsByTagName("body");
 //active className
 const active = document.querySelector(".active-tab");
 
+//Start page 
+const startPage = document.querySelector(".start-page");
+const startPageButton = document.querySelector(".start-page button");
+
 //User input for timer
 let pomodoroMinutes = 25; 
 let shortBreakMinutes = 5 ; 
@@ -53,6 +57,12 @@ function playAudio(){
     audio.muted = false;
     audio.play();
 }
+
+startPageButton.addEventListener("click", () => {
+    pomodoro(pomodoroMinutes, 0 );// START
+    startPage.style.scale = 0;
+    pause.style.display = "inline-block";
+});
 
 // Timer for pomodoro 
 let pomodoro = (minute, second) => {
@@ -240,8 +250,6 @@ let longBreak = (minute, second) => {
     return intervalCounter = setInterval(counter, 1000) ;
 
 }
-
-pomodoro(pomodoroMinutes, 0 );// START
 
 
 
