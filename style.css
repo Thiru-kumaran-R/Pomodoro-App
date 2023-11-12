@@ -148,7 +148,7 @@ body{
 }
 
 /*PAUSE */
-.inner-circle p{
+#pause{
     position: absolute;
     z-index: 10;
     bottom: 80px;
@@ -160,6 +160,19 @@ body{
     font-weight: 100;
     font-size: 20px;
     display: none;
+}
+
+#start{
+    position: absolute;
+    z-index: 10;
+    bottom: 80px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #e2e9ff;
+    margin: 0px auto;
+    font-weight: 100;
+    font-size: 20px;
 }
 
 /* Circle border style */

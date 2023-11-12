@@ -5,6 +5,7 @@ const longBreakTab = document.getElementById("long-break-tab");
 
 const timer = document.getElementById("timer");
 const pause = document.getElementById("pause");
+const start = document.getElementById("start");
 const timerFill = document.getElementById("timer-fill");
 
 //Settings 
@@ -30,13 +31,6 @@ const applyBtn = document.getElementById("apply");
 //Body Tag
 const body = document.getElementsByTagName("body");
 
-//active className
-const active = document.querySelector(".active-tab");
-
-//Start page 
-const startPage = document.querySelector(".start-page");
-const startPageButton = document.querySelector(".start-page button");
-
 //User input for timer
 let pomodoroMinutes = 25; 
 let shortBreakMinutes = 5 ; 
@@ -58,10 +52,10 @@ function playAudio(){
     audio.play();
 }
 
-startPageButton.addEventListener("click", () => {
+start.addEventListener("click", () => {
     pomodoro(pomodoroMinutes, 0 );// START
-    startPage.style.scale = 0;
     pause.style.display = "inline-block";
+    start.style.display = "none";
 });
 
 // Timer for pomodoro 
@@ -251,7 +245,7 @@ let longBreak = (minute, second) => {
 
 }
 
-
+// pomodoro(pomodoroMinutes, 0 )
 
 let pauseTimer = () => {
     if(paused == false){
