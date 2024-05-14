@@ -19,5 +19,5 @@ In the options for the previously mentioned modes, you can select your mins in t
 ## Demo
 
 Try this Memory game in the following url :
-https://thirukumaran05.github.io/Pomodoro-App/
+ https://thiru-kumaran-r.github.io/Pomodoro-App/
 
