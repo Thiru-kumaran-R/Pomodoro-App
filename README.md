@@ -18,6 +18,6 @@ In the options for the previously mentioned modes, you can select your mins in t
 
 ## Demo
 
-Try this Memory game in the following url :
+Try this Pomodoro App in the following url :
  https://thiru-kumaran-r.github.io/Pomodoro-App/
 
